@@ -18,6 +18,20 @@ public class CircularArrayRotation {
 	public static void main(String[] args) {
 		approach_NlogN();
 		approach_logN();
+		rotation();
+	}
+
+	private static void rotation() {
+		// TODO Auto-generated method stub
+		int[] array = {1,2,3,4,5,6,7};
+		int k=3; // No of rotations
+		int cutOff= k % array.length;
+		for(int i=0; i< array.length; i++){
+			if(i - cutOff >= 0)
+				System.out.print(array[i-cutOff]+" ");
+			else
+				System.out.print(array[array.length+i-cutOff]+" ");
+		}
 	}
 
 	private static void approach_NlogN() {
@@ -55,6 +69,6 @@ public class CircularArrayRotation {
 			else
 				System.out.print(array[size+m[i]-cutOff]+" ");
 		}
-
+		System.out.println();
 	}
 }
